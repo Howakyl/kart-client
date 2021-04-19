@@ -10,8 +10,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 
 import TemporaryDrawer from './TemporaryDrawer';
 
@@ -134,7 +135,7 @@ export default function Navbar() {
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
+          <ShoppingCartIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -185,8 +186,8 @@ export default function Navbar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="" color="inherit">
-              <Badge badgeContent={0} color="secondary">
-                <NotificationsIcon />
+              <Badge badgeContent={1} color="secondary">
+              <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton

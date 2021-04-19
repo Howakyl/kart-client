@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ItemList = () => {
+const ItemList = (props) => {
   const classes = useStyles();
   const { loading, error, data } = useQuery(RenderItems);
   if (data) {
@@ -34,7 +34,7 @@ const ItemList = () => {
         <ListItemIcon>
           <AddBoxIcon 
             className="add-box-icon"
-            // color="primary"
+            onClick={()=> props.addCounter()}
           />
         </ListItemIcon>
       </ListItem>
