@@ -59,9 +59,7 @@ export default function TemporaryDrawer(props) {
 
   return (
     <div>
-          {/* <Button onClick={toggleDrawer('left', true)}> */}
-            <MenuIcon className="menu-icon" onClick={toggleDrawer('left', true)}/>
-          {/* </Button> */}
+          <MenuIcon className="menu-icon" onClick={toggleDrawer('left', true)}/>
           <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
             {list('left')}
           </Drawer>      
