@@ -13,3 +13,8 @@
   justify-content: center;
   margin: auto;
 }
+
+.add-box-icon:hover {
+  color: #3F51B5;
+  cursor: pointer;
+}

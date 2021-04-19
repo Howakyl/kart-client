@@ -32,7 +32,10 @@ const ItemList = () => {
       <ListItem key={item.id}>
         <ListItemText primary={item.name}/>
         <ListItemIcon>
-          <AddBoxIcon />
+          <AddBoxIcon 
+            className="add-box-icon"
+            // color="primary"
+          />
         </ListItemIcon>
       </ListItem>
     ))
