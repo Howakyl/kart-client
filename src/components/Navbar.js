@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -186,7 +186,7 @@ export default function Navbar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="" color="inherit">
-              <Badge badgeContent={1} color="secondary">
+              <Badge badgeContent={props.counter} color="secondary">
               <ShoppingCartIcon />
               </Badge>
             </IconButton>

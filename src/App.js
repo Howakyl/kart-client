@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-    <Navbar></Navbar>
+    <Navbar counter={counter} addCounter={addCounter}></Navbar>
     <Container>
       <section className="item-list">
 
