@@ -15,6 +15,9 @@ const ShoppingKart = (props) => {
       <ul>
         <li>items: {props.counter}</li>
       </ul>
+
+
+      
     </div>
   )
 }
