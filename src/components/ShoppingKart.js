@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Search from './Search';
 const ShoppingKart = (props) => {
 
   // useEffect (() => {
@@ -17,7 +17,7 @@ const ShoppingKart = (props) => {
       </ul>
 
 
-      
+      <Search></Search>
     </div>
   )
 }

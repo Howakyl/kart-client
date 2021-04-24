@@ -1,4 +1,7 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import { } from '../graphql/queries/RenderItems';
+
 
 const Search = () => {
   return (
