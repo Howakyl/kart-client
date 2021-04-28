@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
 const Search = () => {
   const [ searchTerm, setSearchTerm ] = useState("");
   const { loading, error, data } = useQuery(RenderItems);
@@ -23,23 +22,36 @@ const Search = () => {
   if (loading) {
     return <p>Loading...</p>
   }
-
   if (error) {
     return <p>Error: {error}</p>
   }
 
   return (
-    <div className={classes.root}>
-      <input 
-        type="text" 
-        placeholder="Search..." 
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-          console.log(searchTerm);
-        }}
-      />
-      <Button variant="contained" color="primary" type="submit">Add</Button>
-    </div>
+    <section>
+      <div className={classes.root}>
+        <input 
+          type="text" 
+          placeholder="Search..." 
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
+        <Button variant="contained" color="primary" type="submit">Add</Button>
+      </div>
+        {data.items.filter((val) => {
+          if (searchTerm === "") {
+            return val;
+          } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return val;
+          }
+        }).map((val, index) => {
+          return (
+            <div key={index}>
+              <p>{val.name}</p>
+            </div>
+          )
+        })}
+    </section>
   )
 }
 
