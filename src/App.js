@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { Container } from '@material-ui/core';
 import Navbar from './components/Navbar'
-import ItemList from './components/ItemList';
+// import ItemList from './components/ItemList';
 import Search from './components/Search';
 
 function App() {
