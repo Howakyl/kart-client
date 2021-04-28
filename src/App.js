@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Container } from '@material-ui/core';
 import Navbar from './components/Navbar'
 import ItemList from './components/ItemList';
-import ShoppingKart from './components/ShoppingKart';
+import Search from './components/Search';
 
 function App() {
 
@@ -19,8 +19,8 @@ function App() {
     <Container>
       <section className="item-list">
 
-      <ItemList counter={counter} addCounter={addCounter}></ItemList>
-      <ShoppingKart counter={counter} addCounter={addCounter}></ShoppingKart>
+        <ItemList counter={counter} addCounter={addCounter}></ItemList>
+        <Search></Search>
       </section>
     </Container>
     </div>
