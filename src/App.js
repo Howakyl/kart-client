@@ -19,7 +19,7 @@ function App() {
     <Container>
       <section className="item-list">
 
-        <ItemList counter={counter} addCounter={addCounter}></ItemList>
+        {/* <ItemList counter={counter} addCounter={addCounter}></ItemList> */}
         <Search></Search>
       </section>
     </Container>

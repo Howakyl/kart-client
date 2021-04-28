@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Search from './Search';
+import React, { useState } from 'react';
 const ShoppingKart = (props) => {
-
-  // useEffect (() => {
-
-  // }, [counter])
-
 
   return (
     <div>
-      <button onClick={()=> {
-          props.addCounter()
-        }}>click me!</button>
-      <ul>
-        <li>items: {props.counter}</li>
-      </ul>
-
-
-      <Search></Search>
+      
     </div>
   )
 }

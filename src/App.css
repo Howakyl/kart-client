@@ -18,3 +18,8 @@
   color: #3F51B5;
   cursor: pointer;
 }
+
+.search-list-container {
+  display: flex;
+  justify-content: space-between;
+}

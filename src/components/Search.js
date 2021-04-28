@@ -3,6 +3,8 @@ import { RenderItems } from '../graphql/queries/RenderItems';
 import { useQuery } from '@apollo/client';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,8 +48,9 @@ const Search = () => {
           }
         }).map((val, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="search-list-container">
               <p>{val.name}</p>
+              <AddBoxIcon className="add-box-icon"></AddBoxIcon>
             </div>
           )
         })}
