@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RenderItems } from '../graphql/queries/RenderItems';
 import { useQuery } from '@apollo/client';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Search = () => {
+  const [ searchTerm, setSearchTerm ] = useState("");
   const { loading, error, data } = useQuery(RenderItems);
   const classes = useStyles();
   if (data) {
@@ -29,8 +30,15 @@ const Search = () => {
 
   return (
     <div className={classes.root}>
-      <input type="text" placeholder="Search..." />
-      <Button variant="contained" color="primary">Add</Button>
+      <input 
+        type="text" 
+        placeholder="Search..." 
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+          console.log(searchTerm);
+        }}
+      />
+      <Button variant="contained" color="primary" type="submit">Add</Button>
     </div>
   )
 }
