@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { RenderItems } from '../graphql/queries/RenderItems';
 import { useQuery } from '@apollo/client';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import AddBoxIcon from '@material-ui/icons/AddBox';
+import ShoppingKart from './ShoppingKart';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,32 +30,35 @@ const Search = () => {
   }
 
   return (
-    <section>
-      <div className={classes.root}>
-        <input 
-          type="text" 
-          placeholder="Search..." 
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-        />
-        <Button variant="contained" color="primary" type="submit">Add</Button>
-      </div>
-        {data.items.filter((val) => {
-          if (searchTerm === "") {
-            return val;
-          } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-            return val;
-          }
-        }).map((val, index) => {
-          return (
-            <div key={index} className="search-list-container">
-              <p>{val.name}</p>
-              <AddBoxIcon className="add-box-icon"></AddBoxIcon>
-            </div>
-          )
-        })}
-    </section>
+    <div className="search-container">
+      <section>
+        <div className={classes.root}>
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+          {/* <Button variant="contained" color="primary" type="submit">Add</Button> */}
+        </div>
+          {data.items.filter((val) => {
+            if (searchTerm === "") {
+              return val;
+            } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return val;
+            }
+          }).map((val, index) => {
+            return (
+              <div key={index} className="search-list-container">
+                <p>{val.name}</p>
+                <AddBoxIcon className="add-box-icon"></AddBoxIcon>
+              </div>
+            )
+          })}
+      </section>
+      <ShoppingKart></ShoppingKart>
+    </div>
   )
 }
 
