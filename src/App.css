@@ -28,3 +28,12 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.kart-item {
+  display: flex;
+  justify-content: space-around;
+}
+
+.kart-item p {
+  margin: 5px;
+}

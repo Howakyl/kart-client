@@ -18,8 +18,15 @@ const useStyles = makeStyles((theme) => ({
 const Search = () => {
   const [ searchTerm, setSearchTerm ] = useState("");
   const [ selectedItems, setSelectedItems ] = useState([])
+  const [ clicked, setClicked ] = useState(false)
   const { loading, error, data } = useQuery(RenderItems);
   const classes = useStyles();
+
+  useEffect(() => {
+    console.log('aaa')
+    
+  }, [clicked])
+
   if (data) {
     console.log(data)
   }
@@ -35,6 +42,11 @@ const Search = () => {
     const found = selectedItems.some(item => item.name === value.name);
       if (found) {
         console.log('duplicate')
+        // value.amount += 1;
+        value = {
+          name: value.name,
+          amount: 2
+        }
       } else {
       selectedItems.push({
         name: value.name,
@@ -42,17 +54,11 @@ const Search = () => {
         // id: value.id
       })
     }
-
-
     
-    console.log('SELECTED ITEMS:' , selectedItems)
+    clicked ? setClicked(false) : setClicked(true);
 
-    // useEffect(() => {
-  
-    // }, [])
     setSelectedItems(selectedItems)
   }
-
 
   return (
     <div className="search-container">
