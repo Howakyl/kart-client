@@ -16,7 +16,7 @@ const ShoppingKart = (props) => {
   }
 
   return (
-    <div>
+    <div className="shopping-kart">
       <h3>My Kart</h3>
       {renderItems()}
     </div>
