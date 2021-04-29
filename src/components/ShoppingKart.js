@@ -9,8 +9,8 @@ const ShoppingKart = (props) => {
 
 
   function renderItems () {
-    return items.map((item, index) => (
-      <div key={index} className="kart-item">
+    return items.map(item  => (
+      <div key={item.id} className="kart-item">
         <p>{item.name}</p>
         <p>Amount: {item.amount}</p>
       </div>

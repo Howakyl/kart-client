@@ -50,13 +50,12 @@ const Search = () => {
       } else {
       selectedItems.push({
         name: value.name,
-        amount: 1
-        // id: value.id
+        amount: 1,
+        id: value.id
       })
     }
-    
-    clicked ? setClicked(false) : setClicked(true);
 
+    clicked ? setClicked(false) : setClicked(true);
     setSelectedItems(selectedItems)
   }
 
