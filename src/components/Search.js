@@ -35,6 +35,7 @@ const Search = () => {
       if (item.name === value.name) {
         return (item.amount += 1);
       }
+      return null;
     });
     if (filterItems.length === 0) {
       selectedItems.push({
@@ -69,10 +70,8 @@ const Search = () => {
               val.name.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
               return val;
-            } else {
-              return null;
             }
-            
+            return null;
           })
           .map((val, index) => {
             return (
