@@ -23,9 +23,6 @@ const Search = () => {
 
   useEffect(() => {}, [clicked]);
 
-  if (data) {
-    console.log(data);
-  }
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -72,7 +69,10 @@ const Search = () => {
               val.name.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
               return val;
+            } else {
+              return null;
             }
+            
           })
           .map((val, index) => {
             return (
