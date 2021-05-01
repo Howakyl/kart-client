@@ -35,9 +35,14 @@ body {
   margin-top: 20px;
 }
 
+.search-container section {
+  width: 240px;
+}
+
 .search-input {
   width: 100%;
   margin-left: 0px;
+  height: 2rem;
 }
 
 .kart-item {
