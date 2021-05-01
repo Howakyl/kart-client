@@ -49,6 +49,7 @@ const Search = () => {
     setSelectedItems(selectedItems);
   };
 
+
   return (
     <div className="search-container">
       <section>
@@ -59,6 +60,7 @@ const Search = () => {
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}
+            className="search-input"
           />
           {/* <Button variant="contained" color="primary" type="submit">Add</Button> */}
         </div>
@@ -87,7 +89,7 @@ const Search = () => {
             );
           })}
       </section>
-      <ShoppingKart selectedItems={selectedItems}></ShoppingKart>
+      <ShoppingKart selectedItems={selectedItems}/>
     </div>
   );
 };
